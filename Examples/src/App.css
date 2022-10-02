@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  position: relative !important;
+  height: 9600px !important;
+}
