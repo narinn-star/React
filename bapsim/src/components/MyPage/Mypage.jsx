@@ -14,6 +14,7 @@ const MypageStyle = styled.div`
   left: 50%;
   transform: translate(-50%);
   font-weight: bold;
+  color: #000000;
 
   .title {
     font-size: 20px;
@@ -67,16 +68,18 @@ const MypageStyle = styled.div`
     font-weight: bolder;
     font-size: 20px;
   }
+  .coin {
+    width: 30px;
+    height: 30px;
+  }
 `;
-
-/*동전 그림 넣기*/
 
 function Mypage() {
   return (
     <MypageStyle>
       <Box
         className="title"
-        sx={{ display: "flex", alignItems: "flex-end", mt: 1, ml: 2 }}
+        sx={{ display: "flex", alignItems: "flex-end", mt: 3, ml: 2 }}
       >
         마이페이지
       </Box>
@@ -98,10 +101,13 @@ function Mypage() {
               <Grid className="coin_title" item xs={12} sm={12}>
                 잔여재화
               </Grid>
-              <Grid className="coin_content" item xs={12} sm={6}>
+              <Grid className="coin_content" item xs={12} sm={2}>
+                <Box sx={{ display: "flex", alignItems: "flex-start"}}>
+                <img className="coin" alt="coin" src="public\images\coin.png"/>
                 10,000
+                </Box>
               </Grid>
-              <Grid item xs={12} sm={5}>
+              <Grid item xs={12} sm={8} sx={{display: 'flex', justifyContent: 'flex-end'}}>
                 <Chip
                   className="coin_btn"
                   label="충 전"
@@ -109,7 +115,7 @@ function Mypage() {
                   component="a"
                   href="#"
                   color="primary"
-                ></Chip>
+                />
               </Grid>
             </Grid>
           </Box>
@@ -121,6 +127,10 @@ function Mypage() {
                 variant="contained"
                 color="primary"
                 href="#change-nickname"
+                sx={{
+                  borderTopLeftRadius: 20,
+                  borderBottomLeftRadius: 0,
+                }}
               >
                 닉네임 변경
               </Button>
@@ -129,6 +139,10 @@ function Mypage() {
                 variant="contained"
                 color="primary"
                 href="#change-pw"
+                sx={{
+                  borderTopRightRadius: 20,
+                  borderBottomRightRadius: 0,
+                }}
               >
                 비밀번호 변경
               </Button>
@@ -139,7 +153,10 @@ function Mypage() {
                 color="primary"
                 className="btn"
                 href="#change-nickname"
-                sx={{}}
+                sx={{
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 20,
+                }}
               >
                 구매 내역
               </Button>
@@ -148,6 +165,10 @@ function Mypage() {
                 variant="contained"
                 color="primary"
                 href="#logout"
+                sx={{
+                  borderTopRightRadius: 0,
+                  borderBottomRightRadius: 20,
+                }}
               >
                 로그아웃
               </Button>

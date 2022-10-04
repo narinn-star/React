@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import React from 'react';
-//import logo from 'src/image/logo-tiger.png';
+import styled from "styled-components";
+import React from "react";
 
 const HeaderStyle = styled.div`
   position: fixed;
@@ -8,26 +7,44 @@ const HeaderStyle = styled.div`
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  background-color: #B1D6A8;
+  background-color: #b1d6a8;
   width: 800px;
-  height: 80px;
+  height: 90px;
   left: 50%;
   transform: translate(-50%);
 
   .title {
-    padding: 25px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 10px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 40px;
-    color: #509C90;
+    color: #509c90;
   }
-`
+  .logo-tiger {
+    margin-top: 0px;
+    width: 75px;
+    height: 75px;
+    vertical-align: baseline;
+  }
+  .logo-Bapsim {
+    width: 273px;
+    height: 75px;
+  }
+`;
 
 function Header() {
   return (
     <HeaderStyle>
-      <div className='title'>
-        {/*<img src={logo}/> */}
-        Bapsim
+      <div className="title">
+        <img
+          className="logo-tiger"
+          alt="logo-tiger"
+          src="/images/logo-tiger.png"
+        />
+        <img
+          className="logo-Bapsim"
+          alt="logo-title"
+          src="/images/logo-Bapsim.png"
+        />
       </div>
     </HeaderStyle>
   );
